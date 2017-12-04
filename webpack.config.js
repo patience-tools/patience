@@ -20,14 +20,11 @@ function makeStyleLoader (type) {
   }})
   if (type)
     loaders.push(type + '-loader')
-  if (true) {
-    return ExtractTextPlugin.extract({
-      use: loaders,
-      fallback: 'vue-style-loader'
-    })
-  } else {
-    return [ 'vue-style-loader' ].concat(loaders)
-  }
+
+  return ExtractTextPlugin.extract({
+    use: loaders,
+    fallback: 'vue-style-loader'
+  })
 }
 
 module.exports = function (env = {}) {
@@ -36,11 +33,11 @@ module.exports = function (env = {}) {
 
   return {
     entry: {
-      'follower-report': './src/app.js'
+      patience: './src/app.js'
     },
     output: {
       path: path.resolve(__dirname, 'build/'),
-      filename: env.produciton ? 'assets/js/[name].min.js' : 'assets/js/[name].js'
+      filename: env.produciton ? 'js/[name].min.js' : 'js/[name].js'
     },
     module: {
       rules: [{
@@ -68,31 +65,28 @@ module.exports = function (env = {}) {
         loader: 'file-loader',
         options: {
           path: path.resolve(__dirname, './'),
-          name: 'assets/images/[name].[ext]',
-          publicPath: '../../'
+          name: 'images/[name].[ext]'
         }
       }, {
         test: /\.(eot|ttf|woff|woff2)$/,
         loader: 'file-loader',
         options: {
           path: path.resolve(__dirname, './'),
-          name: 'assets/fonts/[name].[ext]',
-          publicPath: '../../'
+          name: 'fonts/[name].[ext]'
         }
       }]
     },
     resolve: {
       extensions: [ '.js', '.vue', '.json', '.scss' ],
       alias: {
-        'vue$': 'vue/dist/vue.common.js',
-        'home': path.resolve(__dirname, '..')
+        'vue$': 'vue/dist/vue.common.js'
       }
     },
     // devtool: '#cheap-module-eval-source-map',
     plugins: env.production ? [
       //new CleanWebpackPlugin([ 'assets' ], { root: path.resolve(__dirname, '../'), verbose: true }),
       new ExtractTextPlugin({
-        filename: './assets/css/[name].min.css'
+        filename: 'css/[name].min.css'
       }),
       // short-circuits all Vue.js warning code
       new webpack.DefinePlugin({
@@ -112,7 +106,7 @@ module.exports = function (env = {}) {
     ] : [
       //new CleanWebpackPlugin([ 'assets' ], { root: path.resolve(__dirname, '../'), verbose: true }),
       new ExtractTextPlugin({
-        filename: './assets/css/[name].min.css'
+        filename: 'css/[name].min.css'
       })
     ]
   }
