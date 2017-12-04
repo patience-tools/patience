@@ -1,0 +1,13 @@
+@charset 'utf-8';
+@import 'normalize.css';
+@import 'hack-patience';
+
+html, 
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+* { 
+  box-sizing: border-box;
+}

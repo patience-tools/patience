@@ -14,6 +14,5 @@ export default {
 }
 </script>
 <style lang="scss">
-@import '../../patience-style/patience.scss';
 
 </style>
