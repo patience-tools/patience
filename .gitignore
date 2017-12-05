@@ -1,9 +1,12 @@
 conf.js
-build
+
+/app/index.html
+/app/assets
+/app/dist
+/dist
 
 .DS_Store
-node_modules/
-/dist/
+node_modules
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

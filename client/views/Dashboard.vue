@@ -1,17 +1,21 @@
 <template>
-  <div class="wallet">
+  <div class="dashboard page">
 
   </div>
 </template>
 <script>
+
 export default {
+  
   mounted() {
-    console.log('wallet page mounted')
+    console.log('dashboard page mounted')
+
   }
 }
 </script>
 <style lang="scss" scoped>
-.wallet {
+
+.dashboard {
   position: relative;
   width: 100%;
   height: 100%;

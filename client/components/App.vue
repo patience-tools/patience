@@ -4,19 +4,17 @@
       <nav></nav>
     </div>
     <div class="body">
-      <dashboard></dashboard>
+      <router-view></router-view>
     </div>
   </div>
 </template>
 <script>
-import Nav from './components/Nav'
-import Dashboard from './pages/Dashboard'
+import Nav from './Nav'
 
 export default {
   name: 'app',
   components: {
-    Nav,
-    Dashboard
+    Nav
   }
 }
 </script>
