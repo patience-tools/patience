@@ -81,9 +81,16 @@
     "webpack-dev-server": "^2.9.5"
   },
   "dependencies": {
+    "bitfinex-api-node": "^1.2.1",
+    "bitstamp": "^1.0.4",
+    "cexio-api-node": "^1.0.5",
+    "gdax": "^0.4.2",
     "hack": "^0.8.0",
     "highcharts": "^6.0.3",
+    "kraken-api": "^1.0.0",
+    "node-bittrex-api": "^0.8.1",
     "normalize.css": "^7.0.0",
+    "poloniex.js": "^0.0.7",
     "vue": "^2.5.9",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
