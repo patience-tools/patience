@@ -1,17 +1,17 @@
 <template>
-  <div class="nav">
+  <div class="wallet">
 
   </div>
 </template>
 <script>
 export default {
   mounted() {
-    console.log('nav mounted')
+    console.log('wallet page mounted')
   }
 }
 </script>
 <style lang="scss" scoped>
-.nav {
+.wallet {
   position: relative;
   width: 100%;
   height: 100%;

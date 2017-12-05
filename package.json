@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "hack": "^0.8.0",
+    "highcharts": "^6.0.3",
     "normalize.css": "^7.0.0",
     "vue": "^2.5.9"
   },

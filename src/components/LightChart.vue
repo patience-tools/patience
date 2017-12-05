@@ -1,20 +1,24 @@
 <template>
-  <div class="nav">
-
-  </div>
+  <div class="light-chart" ref="lightChart"></div>
 </template>
 <script>
+import Highcharts from 'highcharts/highstock'
+
 export default {
+  props: {
+    chart: Array
+  },
   mounted() {
-    console.log('nav mounted')
+
   }
 }
 </script>
 <style lang="scss" scoped>
-.nav {
+
+.light-chart {
   position: relative;
+  display: block;
   width: 100%;
   height: 100%;
-  display: block;
 }
 </style>

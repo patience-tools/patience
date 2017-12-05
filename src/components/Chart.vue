@@ -1,17 +1,17 @@
 <template>
-  <div class="nav">
-
-  </div>
+  <div class="chart" ref="chart"></div>
 </template>
 <script>
+import Highcharts from 'highcharts/highstock'
+
 export default {
   mounted() {
-    console.log('nav mounted')
+    console.log('chart mounted')
   }
 }
 </script>
 <style lang="scss" scoped>
-.nav {
+.chart {
   position: relative;
   width: 100%;
   height: 100%;

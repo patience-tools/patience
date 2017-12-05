@@ -1,17 +1,21 @@
 <template>
-  <div class="nav">
+  <div class="dashboard">
 
   </div>
 </template>
 <script>
+
 export default {
+  
   mounted() {
-    console.log('nav mounted')
+    console.log('dashboard page mounted')
+
   }
 }
 </script>
 <style lang="scss" scoped>
-.nav {
+
+.dashboard {
   position: relative;
   width: 100%;
   height: 100%;
