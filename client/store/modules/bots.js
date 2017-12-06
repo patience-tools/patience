@@ -11,19 +11,19 @@ const state = {
         raw: '--paper'
       }, {
         name: 'manual',
-        description: '',
+        description: 'Watch price and account balance, but do not perform trades automatically',
         raw: '--manual'
       }, {
         name: 'disable stats',
-        description: '',
+        description: 'Disable printing order stats',
         raw: '--disable_stats'
       }, {
         name: 'reset profit',
-        description: '',
+        description: 'Start new profit calculation from 0',
         raw: '--reset_profit'
       }, {
         name: 'debug',
-        description: '',
+        description: 'Output detailed debug info',
         raw: '--debug'
       }],
       options: [{
