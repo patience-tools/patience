@@ -4,10 +4,10 @@ process.env.NODE_ENV = 'production'
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const ProgressPlugin = require('webpack/lib/ProgressPlugin')
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const OfflinePlugin = require('offline-plugin')
 const rm = require('rimraf')
 const base = require('./webpack.base')
-const pkg = require('../package')
 const _ = require('./utils')
 const config = require('./config')
 
@@ -30,7 +30,7 @@ base.plugins.push(
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': JSON.stringify('production')
   }),
-  new webpack.optimize.UglifyJsPlugin({
+  new UglifyJSPlugin({ uglifyOptions: {
     sourceMap: true,
     compress: {
       warnings: false
@@ -38,7 +38,7 @@ base.plugins.push(
     output: {
       comments: false
     }
-  }),
+  }}),
   // extract vendor chunks
   new webpack.optimize.CommonsChunkPlugin({
     name: 'vendor',
@@ -54,12 +54,12 @@ base.plugins.push(
   new OfflinePlugin({
     relativePaths: false,
     ServiceWorker: {
-      events:true,
-      navigateFallbackURL:'/'
+      events: true,
+      navigateFallbackURL: '/'
     },
     AppCache: {
-      events:true,
-      FALLBACK:{ '/':'/' }
+      events: true,
+      FALLBACK: { '/': '/' }
     }
   })
 )

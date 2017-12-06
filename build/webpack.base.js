@@ -2,35 +2,10 @@
 
 const path = require('path')
 const webpack = require('webpack')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const config = require('./config')
 const _ = require('./utils')
-
-function makeStyleLoader (type) {
-  const cssLoader = {
-    loader: 'css-loader',
-    options: {
-      minimize: true,
-      importLoaders: 1,
-      name: 'styles/[name].[ext]'
-    }
-  }
-  const loaders = [ cssLoader ]
-  loaders.push({ loader: 'postcss-loader', options: {
-    config: {
-      path: './postcss.config.js'
-    }
-  }})
-  if (type)
-    loaders.push(type + '-loader')
-
-  return ExtractTextPlugin.extract({
-    use: loaders,
-    fallback: 'vue-style-loader'
-  })
-}
 
 module.exports = {
   entry: {
@@ -64,25 +39,27 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.vue$/,
-      loader: 'vue-loader'/*,
-      options: {
-        loaders: {
-          css: makeStyleLoader(),
-          scss: makeStyleLoader('sass'),
-          sass: makeStyleLoader('sass')
-        }
-      }*/
+      loader: 'vue-loader'
     }, {
       test: /\.js$/,
-      loaders: ['babel-loader'],
-      exclude: /node_modules/
-    },/* {
-      test: /\.css$/,
-      use: makeStyleLoader()
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            ['babel-preset-stage-2'],
+            ['es2015', {
+              'loose': true
+            }]
+          ],
+          plugins: [
+            'add-module-exports',
+            'transform-object-assign',
+            'es6-promise'
+          ]
+        }
+      }
     }, {
-      test: /\.scss$/,
-      use: makeStyleLoader('sass')
-    },*/ {
       test: /\.(ico|jpg|png|gif|eot|otf|webp|ttf|woff|woff2)(\?.*)?$/,
       loader: 'file-loader',
       options: {
@@ -110,4 +87,3 @@ module.exports = {
   ],
   target: _.target
 }
-
