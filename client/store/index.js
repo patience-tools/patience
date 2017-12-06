@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import * as bots from './modules/bots'
 
 Vue.use(Vuex)
 
@@ -23,11 +24,14 @@ const actions = {
     }, 200)
   }
 }
-
+const modules = {
+  bots
+}
 const store = new Vuex.Store({
+  actions,
   state,
   mutations,
-  actions
+  modules
 })
 
 export default store
