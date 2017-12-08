@@ -4,16 +4,12 @@
   </div>
 </template>
 <script>
-import CoinMarketCap from 'node-coinmarketcap'
-const cm = new CoinMarketCap()
-
+import blockchain from 'blockchain.info'
 export default {
   name: 'dashboard',
   mounted() {
     console.log('dashboard page mounted')
-    cm.get('bitcoin', coin => {
-      console.log('$BTC', coin)
-    })
+    
   }
 }
 </script>

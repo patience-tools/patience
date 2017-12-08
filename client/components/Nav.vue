@@ -5,6 +5,9 @@
 </template>
 <script>
 export default {
+  props: {
+    page: String
+  },
   mounted() {
     console.log('nav mounted')
   }

@@ -42,7 +42,7 @@ module.exports = {
       loader: 'vue-loader'
     }, {
       test: /\.js$/,
-      exclude: /node_modules/,
+      exclude: [/node_modules/],
       use: {
         loader: 'babel-loader',
         options: {
@@ -54,8 +54,7 @@ module.exports = {
           ],
           plugins: [
             'add-module-exports',
-            'transform-object-assign',
-            'es6-promise'
+            'transform-object-assign'
           ]
         }
       }

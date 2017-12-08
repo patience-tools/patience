@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="page">
     <div class="nav-cont">
       <nav></nav>
     </div>
@@ -12,7 +12,7 @@
 import Nav from './Nav'
 
 export default {
-  name: 'app',
+  name: 'Page',
   components: {
     Nav
   }
@@ -23,7 +23,7 @@ export default {
 $material-curve: all 375ms cubic-bezier(0.4, 0.0, 0.2, 1);
 $navWidth: 40px;
 
-#app {
+.page {
   position: relative;
   width: 100%;
   height: 100%;

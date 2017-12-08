@@ -1,6 +1,8 @@
 @charset 'utf-8';
 @import 'normalize.css';
 @import 'hack-patience';
+$fa-font-path: "../../../node_modules/font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome.scss';
 
 html, 
 body {
