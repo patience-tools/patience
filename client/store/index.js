@@ -5,7 +5,7 @@ import * as bots from './modules/bots'
 Vue.use(Vuex)
 
 const state = {
-  count: 0
+  navOpen: false
 }
 
 const mutations = {
