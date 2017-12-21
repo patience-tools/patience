@@ -23,6 +23,8 @@ npm run build
 
 ## Todo
 
+- [ ] add [etherdelta](https://etherdelta.com)
+- [ ] add [ledger]()
 - [ ] dashboard
 - [ ] wallet
 - [ ] login

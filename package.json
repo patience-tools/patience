@@ -97,6 +97,7 @@
     "bitstamp": "^1.0.4",
     "blockchain.info": "^2.10.1",
     "cexio-api-node": "^1.0.5",
+    "electron-json-storage": "^4.0.2",
     "gdax": "^0.4.2",
     "hack": "^0.8.0",
     "highcharts": "^6.0.3",
@@ -115,7 +116,7 @@
     "npm": ">= 3.0.0"
   },
   "peerDependencies": {
-    "es6-promise": "^4.1.1",
-    "request": "^2.34.0"
+    "es6-promise": "^4",
+    "request": "^2.34"
   }
 }
